@@ -1,0 +1,121 @@
+<!DOCTYPE >
+<html>
+  <head>
+    <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,intial scale=1.0">
+<title>SnakeGame</title>
+<style>
+    *{
+        padding:0px;
+        margin:0px;
+            }
+            body{
+                background-image: url("https://thumbs.dreamstime.com/b/funny-snake-chocolate-easter-eggs-illustration-green-background-109095920.jpg");
+            }
+    #snakeGame{
+        display:grid;
+        width:500px;
+        height: 400px;
+        border: 5px solid green;
+        background-color: greenyellow !important;
+        margin-top:50px;
+        margin-left:90px;
+        text-align:center;
+        
+    }
+    #img{
+        display: flex;
+        justify-content: space-around;
+        align-items: flex-end;
+
+    }
+    #playGame{
+        font-size: xx-large;
+        padding :30px;
+        border: 3px solid darkgreen ;
+        background-color: peru;
+    }
+    
+    #egg{
+        margin-bottom: 15px;;
+    }
+    #abc{
+        display:flex;
+    }#instructions{
+        height: fit-content;
+        width: fit-content;
+        padding:10 px;
+        border: 3px;
+        margin:60px;
+    }
+    #gameStarts{
+        height: fit-content;
+        width: fit-content;
+        padding:20px;
+        border: 5px solid olive;
+        margin-top: 30px;
+
+    }
+</style>
+  </head>
+  <body>
+      <div id="abc">
+      <div id="snakeGame">
+          <h1><span>Snake game</span></h1><br>
+          <div id="play"><span id="playGame">Play game</span></div>
+          <div id="img">
+              
+              <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRcwutfrUiqipoLt_DCCFRhnmNLWdfg-FiaSbupVcoG5WlvmIeklbpJGwRd42MFDpjQEw&usqp=C
+              AU" height="50px" width="400px">
+              <img id="egg" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSFo2vc0tZRoBGm0u0j5GhiNI6GjOYa2E6vMQsJy6NIk5ElPnALrh9LD5t0hv_yXD5AEZQ&usqp=CA
+              U" height="20px"width="20px">
+            </div>
+        </div>
+           <div id="instructions" style="display: none">
+          <ul>Instructions
+            <li> use the  arrow to move the snake </li>
+            <li>top-arrow: snake move up</li>
+            <li>down-arrow:snake move down</li>
+            <li>right-arrow:snake move right</li>
+            <li>left-arrow:snake move left</li>
+            <li>Snake grows as it eat the food</li>
+            <li>the game ends when the snake moves off the screen </li>
+            <li>The goal is to make the snake as large as possible before that happens</li>
+          </ul>
+          <br>
+          <h1 id="gameStarts">
+                Game Starts 
+              <span id="timer">0</span>
+          </h1>
+           </div>
+        </div>
+        
+    
+  </body><script>
+      var timing=15;
+      var time=document.getElementById('timer');
+      time.innerHTML=timing;
+      const play = document.getElementById('playGame').addEventListener('click',(e)=>{
+        var instructions=document.getElementById('instructions').style.display='block';
+    })
+    timer();
+     
+    function timer(){
+        
+        const timeInterval=setInterval(function(){
+                        timing--;
+            time.innerHTML=timing;
+            if(timing<=0){
+clearInterval(timeInterval);
+time.innerHTML=0;
+ startgame();
+            }
+        },1000)
+    }
+function startgame(){
+    window.open('game.html','_blank');
+   // window.location.reload();
+}
+  </script>
+
+</html>
